@@ -378,7 +378,7 @@ h1 {
 }
 
 /*video*/
-.baking-section {
+#baking-section {
     border: 1px solid var(--border-color);
     max-width: 1100px;
     margin: 40px auto;
@@ -485,7 +485,7 @@ h1 {
 
 
 /*dinner*/
-.recipe-section {
+#recipe-section {
   border: 1px solid var(--border-color);
   max-width: 1100px;
   margin: 40px auto;
@@ -598,7 +598,7 @@ h1 {
 
 /*tips*/
 
-.tips-section {
+#tips-section {
   background: #fef6f4;
   padding: 40px 60px;
   text-align: left;
