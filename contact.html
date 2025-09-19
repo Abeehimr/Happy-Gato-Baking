@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Happy Gato</title>
+  <link rel="stylesheet" href="/assets/css/contact.css">
+</head>
+<body>
+  <header class="site-header"></header>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="imge-logo">
+          <img src="/assets/images/cat and coffee.jfif" alt="Happy Gato's Baking Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html"><span class="icon home-icon"></span>Home</a></li>
+          <li><div class="nav-item"><span class="icon recipe-icon"></span>Recipes</div></li>
+        <li><div class="nav-item"><span class="icon tips-icon"></span>Baking Tips</div></li>
+        <li><div class="nav-item"><span class="icon video-icon"></span>Videos</div></li>
+          <li><a href="aboutus.html"><span class="icon about-icon"></span>About Us</a></li>
+          <li><a href="contact.html"><span class="icon contact-icon"></span>Contact</a></li>
+        </ul>
+        <button class="nav-toggle">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Background Slideshow -->
+   <div id="slideshow" class="slideshow" aria-hidden="true"></div>
+
+  <!-- Contact Form -->
+  <main>
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p class="subtitle">We'd love to hear from you. Fill out the form and we'll get back to you soon!</p>
+      
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-submit">Submit</button>
+          <button type="reset" class="btn-reset">Reset</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; Sally's Baking Addiction. Site created for academic purposes.</p>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a> |
+      <a href="aboutus.html">About Us</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <!-- MODAL POPUP -->
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <h3>Message Sent!</h3>
+      <p>Thank you for contacting us. We will get back to you soon.</p>
+      <button id="closeModal" class="btn-close">Close</button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+  </script>
+</body>
+</html
