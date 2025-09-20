@@ -709,7 +709,7 @@ h1 {
   text-align: center;
   font-size: 1.3rem;
   padding: 1rem;
-  background-color: var(--accent, #0072b5);
+  background-color: var(--accent, var(--h1-color));
   color: var(--card-bg);
 }
 
@@ -727,7 +727,7 @@ h1 {
 .popular-table h3 {
   margin-top: 0;
   margin-bottom: .5rem;
-  color: var(--accent, #0072b5);
+  color: var(--accent, var(--h1-color));
   font-size: 1.1rem;
 }
 
