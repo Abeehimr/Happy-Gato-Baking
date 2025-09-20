@@ -54,18 +54,6 @@ The project demonstrates modern front-end practices, color-blind friendly design
 - **Best Practices**: 95+  
 - **SEO**: 95+  
 
-📸 **Screenshots** (place these in your repo):  
-- `assets/screenshots/lighthouse-before.png`  
-- `assets/screenshots/lighthouse-after.png`  
-
-Include them in the README like this:  
-
-#### Lighthouse Before
-![Lighthouse Before](assets/screenshots/lighthouse-before.png)
-
-#### Lighthouse After
-![Lighthouse After](assets/screenshots/lighthouse-after.png)
-
 ---
 
 ## 🛠️ Tech Stack
@@ -91,9 +79,7 @@ Include them in the README like this:
 │   │   └── icons...
 │   ├── media
 │   │   └── jumpy.gif
-│   └── screenshots
-│       ├── lighthouse-before.png
-│       └── lighthouse-after.png
+
 ```
 
 ---
