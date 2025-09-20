@@ -419,8 +419,10 @@ h1 {
 }
 
 .icon-circle img {
-  width: 100px;
-  height: 90px;
+  width: 100%;   /* bigger than container */
+  height: 100%;
+  object-fit: cover;
+  transform: scale(2); /* zoom factor */
   border-radius: 50%;
 }
 

@@ -41,7 +41,17 @@ The project demonstrates modern front-end practices, color-blind friendly design
 
 ---
 
+## 📊 Lighthouse Report
 
+### After Improvements
+- **Performance**: 72  
+- **Accessibility**: 92  
+- **Best Practices**: 96
+- **SEO**: 91
+
+![Lighthouse After](assets/images/lighthouse.jpeg)
+
+---
 
 ## 🛠️ Tech Stack
 - **HTML5**  
