@@ -5,8 +5,126 @@
   --tag-color: #7a5c36;
   --comment-color: #c36b68;
   --sec-clr:#fef6f4;
+
+
+  --nav-link: #5c3a5c;
+  --nav-link-hover: #a05fa0;
+
+  --h1-color: #6b3e6b;
+
+  --bd-color: #333;
+  --card-bg: #fff;
+  --bl: #000;
+  --bll: #111;
+
+  --bio-box: #f8f6f5;
+  --a-button: #292828;
 }
 
+/* === Protanopia Theme === */
+.theme-protanopia {
+  --main-clr: #f8f8f6;
+  --border-color: #cfcfcf;
+  --tag-color: #3d6ba5;
+  --comment-color: #6a9f6a;
+  --sec-clr: #f8f8f6;
+
+  --nav-link: #365a8c;
+  --nav-link-hover: #4d7bbf;
+  --h1-color: #28507a;
+
+  --bd-color: #222;
+  --card-bg: #ffffff;
+  --bl: #000;
+  --bll: #111;
+
+  --bio-box: #f2f2f0;
+  --a-button: #404040;
+}
+
+/* === Deuteranopia Theme === */
+.theme-deuteranopia {
+  --main-clr: #f7f7f5;
+  --border-color: #d2cfc9;
+  --tag-color: #b85d3f;
+  --comment-color: #4572a7;
+  --sec-clr: #f7f7f5;
+
+  --nav-link: #7a4d99;
+  --nav-link-hover: #9c6bc0;
+  --h1-color: #5a3477;
+
+  --bd-color: #222;
+  --card-bg: #ffffff;
+  --bl: #000;
+  --bll: #111;
+
+  --bio-box: #f0f0ee;
+  --a-button: #353535;
+}
+
+/* === Tritanopia Theme === */
+.theme-tritanopia {
+  --main-clr: #faf9f7;
+  --border-color: #d5d1cb;
+  --tag-color: #c25c3c;
+  --comment-color: #6b9b6b;
+  --sec-clr: #faf9f7;
+
+  --nav-link: #996633;
+  --nav-link-hover: #cc8844;
+  --h1-color: #774422;
+
+  --bd-color: #222;
+  --card-bg: #ffffff;
+  --bl: #000;
+  --bll: #111;
+
+  --bio-box: #f3f3f0;
+  --a-button: #363636;
+}
+
+/* === Achromatopsia Theme (Grayscale) === */
+.theme-achromatopsia {
+  --main-clr: #f5f5f5;
+  --border-color: #cccccc;
+  --tag-color: #555555;
+  --comment-color: #777777;
+  --sec-clr: #f5f5f5;
+
+  --nav-link: #333333;
+  --nav-link-hover: #555555;
+  --h1-color: #222222;
+
+  --bd-color: #000000;
+  --card-bg: #ffffff;
+  --bl: #000;
+  --bll: #111;
+
+  --bio-box: #eeeeee;
+  --a-button: #222222;
+}
+
+/* === High Contrast Theme === */
+.theme-high-contrast {
+  --main-clr: #000000;
+  --border-color: #ffffff;
+  --tag-color: #ffcc00;
+  --comment-color: #00ffff;
+  --sec-clr: #000000;
+
+  --nav-link: #ffffff;
+  --nav-link-hover: #ff0000;
+  --h1-color: #ffff00;
+
+  --bd-color: #ffffff;
+  --card-bg: #000000;
+  --bl: #ffffff;
+  --bll: #cccccc;
+
+  --bio-box: #111111;
+  --a-button: #ffffff;
+}
 
 
 * {
@@ -15,6 +133,50 @@
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Theme Switcher Dropdown */
+.theme-switcher select {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--nav-link);
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover / focus styles */
+.theme-switcher select:hover,
+.theme-switcher select:focus {
+  border-color: var(--nav-link-hover);
+  outline: none;
+  color: var(--nav-link-hover);
+  box-shadow: 0 0 4px var(--nav-link-hover);
+}
+
+/* Make it blend with nav items */
+.theme-switcher {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Optional: remove dropdown arrow and style it */
+.theme-switcher select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--nav-link) 50%),
+    linear-gradient(135deg, var(--nav-link) 50%, transparent 50%);
+  background-position: calc(100% - 15px) calc(50% - 2px),
+    calc(100% - 10px) calc(50% - 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2rem; /* space for arrow */
+}
+
 
 .main-nav {
   background-color: rgba(255, 255, 255, 0.8); 
@@ -57,11 +219,12 @@
   list-style: none;
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #5c3a5c;
+  color: var(--nav-link);
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -71,7 +234,7 @@
 }
 
 .nav-links a:hover {
-  color: #a05fa0;
+  color: var(--nav-link-hover);
   background-color: rgba(160, 95, 160, 0.1);
   border-radius: 5px;
 }
@@ -82,7 +245,7 @@
   align-items: center;
   padding: 8px;
   font-weight: 500;
-  color: #5c3a5c;
+  color: var(--nav-link);
   cursor: default;
   border-radius: 5px;
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -90,7 +253,7 @@
 
 .nav-item:hover {
   background-color: rgba(160, 95, 160, 0.1);
-  color: #a05fa0;
+  color: var(--nav-link-hover);
 }
 
 /* Toggle*/
@@ -100,7 +263,7 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #5c3a5c;
+  color: var(--nav-link);
 }
 
 @media (max-width: 600px) {
@@ -127,12 +290,11 @@
 }
 
 body {
-  color: #333;
+  color: var(--bd-color);
   line-height: 2.5;
 }
 
 header {
-  /*background-color: #f5f4f3;*/
   padding: 45px 20px 40px;
   text-align: center;
  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);*/
@@ -152,7 +314,7 @@ header {
 
 h1 {
   font-size: 2.5rem;
-  color: #6b3e6b;
+  color: var(--h1-color);
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -160,7 +322,7 @@ h1 {
 .intro {
   text-align: center;
   padding: 40px 20px;
-  background-color: #fef6f4;
+  background-color: var(--sec-clr);
 }
 
 .intro h2 {
@@ -179,7 +341,7 @@ h1 {
 }
 
 .recipe {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 10px;
   padding: 15px;
   width: 250px;
@@ -216,7 +378,7 @@ h1 {
 /*Icon*/
 .category-section {
   padding: 2rem 1rem;
-  background-color: #fef6f4;
+  background-color: var(--sec-clr);
 }
 
 .category-grid {
@@ -229,7 +391,7 @@ h1 {
 }
 
 .category-card {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 8px;
   text-align: center;
   padding: .2rem .5rem;
@@ -266,7 +428,7 @@ h1 {
   font-size: 0.9rem;
   font-weight: 700;
   margin: .4rem 0 0;
-  color: #000;
+  color: var(--bl);
 }
 
 .category-card:hover .icon-circle {
@@ -311,9 +473,9 @@ h1 {
   margin-right: 40px;
   border-radius: 50%;
   overflow: hidden;
-  border: 8px solid #fff;
+  border: 8px solid var(--card-bg);
   box-shadow: 0 2px 2px rgba(7, 7, 7, 0.1);
-  background: #fff;
+  background: var(--card-bg);
 }
 
 .image-container img {
@@ -323,7 +485,7 @@ h1 {
 }
 
 .bio-box {
-  background-color: #f8f6f5;
+  background-color: var(--bio-box);
   padding: 40px;
   padding-left: 80px;
   margin-left: -100px;
@@ -333,7 +495,7 @@ h1 {
 
 .about {
   font-size: 15px;
-  color: #000;
+  color: var(--bl);
   font-weight: bold;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -344,12 +506,12 @@ h1 {
 .bio-box h1 {
   font-size: 30px;
   margin: 0;
-  color: #111;
+  color: var(--bll);
 }
 
 .description {
   font-size: 16px;
-  color: #111;
+  color: var(--bll);
   line-height: 1.5;
   margin-top: 0;
 }
@@ -362,8 +524,8 @@ h1 {
   display: inline-block;
   margin-top: 25px;
   padding: 9px 22px;
-  background-color: #292828;
-  color: #fff;
+  background-color: var(--a-button);
+  color: var(--card-bg);
   font-size: 14px;
   font-weight: bold;
   border-radius: 900px;
@@ -376,7 +538,7 @@ h1 {
 }
 
 .button:hover {
-  background-color: #333;
+  background-color: var(--bd-color);
 }
 
 @media (max-width: 600px) {
@@ -443,7 +605,7 @@ h1 {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 30px;
-    color: #333;
+    color: var(--bd-color);
 }
 
 .video-grid {
@@ -498,7 +660,7 @@ h1 {
     font-size: 1.2rem;
     font-weight: bold;
     margin: 5px 0 5px;
-    color: #000;
+    color: var(--bl);
 }
 
 .comments {
@@ -528,7 +690,7 @@ h1 {
 
 /*table*/
 .table-items {
-  background-color: #fef6f4; 
+  background-color: var(--sec-clr); 
   padding: 30px 0;          
 }
 
@@ -537,7 +699,7 @@ h1 {
   max-width: 1000px;
   margin: 2rem auto;
   border-collapse: collapse;
-  background: var(--surface, #fff);
+  background: var(--surface, var(--card-bg));
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   border-radius: 8px;
   overflow: hidden;
@@ -548,7 +710,7 @@ h1 {
   font-size: 1.3rem;
   padding: 1rem;
   background-color: var(--accent, #0072b5);
-  color: #fff;
+  color: var(--card-bg);
 }
 
 .popular-table td {
@@ -627,7 +789,7 @@ h1 {
 
 .section-description {
   font-size: 15px;
-  color: #333;
+  color: var(--bd-color);
   line-height: 1.6;
   max-width: 900px;
   margin: 0 0 28px 0;
@@ -649,7 +811,7 @@ h1 {
 }
 
 .recipe-card {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   overflow: hidden;
@@ -725,7 +887,7 @@ h1 {
 /*tips*/
 
 #tips-section {
-  background: #fef6f4;
+  background: var(--sec-clr);
   padding: 40px 60px;
   text-align: left;
 }
@@ -758,7 +920,7 @@ h1 {
 
 .tip-card {
   width: 170px;
-  background: #fff;
+  background: var(--card-bg);
   overflow: hidden;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -793,7 +955,7 @@ h1 {
 
 .tips-btn {
   background: #e2907b;
-  color: #fff;
+  color: var(--card-bg);
   border: none;
   padding: 10px 28px;
   border-radius: 30px;
@@ -871,7 +1033,7 @@ h1 {
   display: flex;
   max-width: 1120px;
   margin: 60px auto ;
-  background-color: #f8f6f5;
+  background-color: var(--bio-box);
 }
 
 .signup-text {
@@ -883,13 +1045,13 @@ h1 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #000;
+  color: var(--bl);
 }
 
 .signup-text p {
   font-size: 16px;
   line-height: 1.6;
-  color: #111;
+  color: var(--bll);
   margin-bottom: 30px;
 }
 
@@ -920,12 +1082,12 @@ form input[type="email"] {
 
 .checkbox-container span {
   font-weight: bold;
-  color: #000;
+  color: var(--bl);
 }
 
 form button {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--bl);
+  color: var(--card-bg);
   font-weight: bold;
   font-size: 14px;
   padding: 14px 24px;
@@ -933,12 +1095,12 @@ form button {
   border-radius: 999px;
   margin-bottom: 0;
   cursor: pointer;
-  box-shadow: 0 4px 0 #333;
+  box-shadow: 0 4px 0 var(--bd-color);
   transition: background-color 0.3s ease;
 }
 
 form button:hover {
-  background-color: #333;
+  background-color: var(--bd-color);
 }
 
 .privacy {
@@ -1026,7 +1188,7 @@ form button:hover {
 }
 .about-hero h1 {
   font-size: 2.5rem;
-  color: #6b3e6b;
+  color: var(--h1-color);
   margin-bottom: 10px;
 }
 .about-hero p {
@@ -1052,8 +1214,8 @@ form button:hover {
   margin-right: 40px;
   border-radius: 50%;
   overflow: hidden;
-  border: 8px solid #fff;
-  background: #fff;
+  border: 8px solid var(--card-bg);
+  background: var(--card-bg);
   z-index:10;
 }
 .about-image-container img {
@@ -1062,7 +1224,7 @@ form button:hover {
   object-fit: cover;
 }
 .about-bio-box {
-  background-color: #f8f6f5;
+  background-color: var(--bio-box);
   padding: 40px;
   padding-left: 80px;
   margin-left: -100px;
@@ -1079,11 +1241,11 @@ form button:hover {
 .about-bio-box h1 {
   font-size: 30px;
   margin: 0;
-  color: #111;
+  color: var(--bll);
 }
 .about-description {
   font-size: 16px;
-  color: #111;
+  color: var(--bll);
   line-height: 1.5;
 }
 .about-button-ctn { text-align: right; }
@@ -1091,15 +1253,15 @@ form button:hover {
   display: inline-block;
   margin-top: 25px;
   padding: 9px 22px;
-  background-color: #292828;
-  color: #fff;
+  background-color: var(--a-button);
+  color: var(--card-bg);
   font-size: 14px;
   font-weight: bold;
   border-radius: 900px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
-.about-button:hover { background-color: #333; }
+.about-button:hover { background-color: var(--bd-color); }
 
 @media (max-width: 600px) {
   .about-section {
@@ -1142,8 +1304,8 @@ form button:hover {
 
 /* Inline span highlight */
 .highlight {
-  color: #fff;
-  background-color: #a05fa0;
+  color: var(--card-bg);
+  background-color: var(--nav-link-hover);
   padding: 2px 6px;
   border-radius: 4px;
   font-weight: bold;
@@ -1170,7 +1332,7 @@ form button:hover {
   background-color: #f1e9f1;
   padding: 10px 15px;
   margin: 15px 0;
-  border-left: 4px solid #6b3e6b;
+  border-left: 4px solid var(--h1-color);
   font-size: 0.95rem;
 }
 .mission-grid {
@@ -1180,7 +1342,7 @@ form button:hover {
   margin-bottom: 20px;
 }
 .mission-card {
-  background: #fff;
+  background: var(--card-bg);
   box-shadow: 0 1px 1px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
@@ -1201,7 +1363,7 @@ form button:hover {
 }
 .mission-comments {
   font-size: 0.9rem;
-  color: #5c3a5c;
+  color: var(--nav-link);
   padding: 4px 10px 10px;
   margin: 0;
 }
@@ -1214,9 +1376,9 @@ form button:hover {
 .mission-details summary {
   cursor: pointer;
   font-weight: bold;
-  color: #6b3e6b;
+  color: var(--h1-color);
 }
-.mission-details[open] summary { color: #a05fa0; }
+.mission-details[open] summary { color: var(--nav-link-hover); }
 .mission-btn-ctn {
   text-align: right;
 }
@@ -1224,7 +1386,7 @@ form button:hover {
 .mission-btn-ctn { text-align: right; margin-top: 10px; }
 .mission-btn {
   background: #f0e2b6;
-  color: #fff;
+  color: var(--card-bg);
   border: none;
   padding: 10px 28px;
   border-radius: 30px;
@@ -1237,11 +1399,11 @@ form button:hover {
   gap: 6px;
 }
 .mission-btn-alt {
-  background-color: #6b3e6b;
+  background-color: var(--h1-color);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 .mission-btn-alt:hover {
-  background-color: #a05fa0;
+  background-color: var(--nav-link-hover);
   transform: scale(1.05);
 }
 
@@ -1278,7 +1440,6 @@ body.contact-page {
 .join-wrapper {
   max-width: 700px;
   margin: 0 auto;
-  /* background: #f8f6f5; */
   backdrop-filter: blur(50px);
   padding: 50px 50px 100px;
   border-radius: 8px;
@@ -1288,7 +1449,7 @@ body.contact-page {
 .join-title {
   text-align: center;
   line-height: 6rem;
-  color: #6b3e6b;
+  color: var(--h1-color);
   margin-bottom: 10px;
 }
 
@@ -1297,7 +1458,7 @@ body.contact-page {
   margin-top: 15px;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #5c3a5c;
+  color: var(--nav-link);
 }
 
 .join-form input[type="text"],
@@ -1344,7 +1505,7 @@ body.contact-page {
 
 .join-btn-submit {
   background-color: #0077b6;
-  color: #fff;
+  color: var(--card-bg);
 }
 .join-btn-submit:hover {
   background-color: #005f91;
@@ -1363,12 +1524,12 @@ body.contact-page {
 }
 .join-download a {
   text-decoration: none;
-  color: #5c3a5c;
+  color: var(--nav-link);
   font-weight: bold;
   transition: color 0.3s ease;
 }
 .join-download a:hover {
-  color: #a05fa0;
+  color: var(--nav-link-hover);
   text-decoration: underline;
 }
 
@@ -1456,7 +1617,7 @@ body.contact-page {
 
 .footer-nav a {
   text-decoration: none;
-  color: #333;
+  color: var(--bd-color);
   margin: 0 5px;
 }
 
@@ -1488,8 +1649,8 @@ body.contact-page {
 @media print {
   /* styles applied only when printing */
   body {
-    background: #fff;   /* white background for printing */
-    color: #000;        /* dark text */
+    background: var(--card-bg);   /* white background for printing */
+    color: var(--bl);        /* dark text */
   }
 
   .main-nav,

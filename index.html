@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home | Happy Gato's Baking</title>
-  <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
 <!-- Open Graph meta tags -->
 <meta property="og:title" content="Happy Gato Baking Community">
@@ -30,9 +30,22 @@
         <li><a href="aboutus.html"><span class="icon about-icon"></span>About Us</a></li>
         <li><a href="contact.html"><span class="icon contact-icon"></span>Contact</a></li>
 
+      <!-- Theme Selector -->
+      <li class="theme-switcher">
+        <label for="themeSelect" class="visually-hidden">Theme:</label>
+        <select id="themeSelect">
+          <option value="">Default</option>
+          <option value="theme-protanopia">Protanopia</option>
+          <option value="theme-deuteranopia">Deuteranopia</option>
+          <option value="theme-tritanopia">Tritanopia</option>
+          <option value="theme-achromatopsia">Achromatopsia</option>
+          <option value="theme-high-contrast">High Contrast</option>
+        </select>
+      </li>
 
         
       </ul>
+
       <button class="nav-toggle" aria-label="Toggle navigation menu">☰</button>
     </div>
   </nav>
@@ -379,6 +392,23 @@
     const links = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => links.classList.toggle('show'));
   </script>
+
+<script>
+  const themeSelect = document.getElementById("themeSelect");
+
+  // Load saved theme from localStorage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    document.documentElement.className = savedTheme;
+    themeSelect.value = savedTheme;
+  }
+
+  // Change theme when dropdown changes
+  themeSelect.addEventListener("change", (e) => {
+    document.documentElement.className = e.target.value;
+    localStorage.setItem("theme", e.target.value);
+  });
+</script>
 
 </body>
 </html>

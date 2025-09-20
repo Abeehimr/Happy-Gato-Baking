@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Happy Gato Baking</title>
-  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
   <!-- Open Graph meta tags -->
 <meta property="og:title" content="Happy Gato Baking Community">
@@ -18,23 +18,39 @@
 
   <!-- Navigation -->
   <header class="site-header"></header>
-    <!-- NAV -->
-    <nav class="main-nav" role="navigation">
-      <div class="nav-container">
-        <div class="imge-logo">
-          <img src="/assets/images/cat and coffee.jfif" alt="Happy Gato's Baking Logo" />
-        </div>
-        <ul class="nav-links">
-          <li><a href="index.html"><span class="icon home-icon"></span>Home</a></li>
-          <li><a href="index.html#baking-section"><span class="icon video-icon"></span>Videos</a></li>
-          <li><a href="index.html#recipe-section"><span class="icon recipe-icon"></span>Recipes</a></li>
-          <li><a href="index.html#tips-section"><span class="icon tips-icon"></span>Baking Tips</a></li>
-          <li><a href="aboutus.html"><span class="icon about-icon"></span>About Us</a></li>
-          <li><a href="contact.html"><span class="icon contact-icon"></span>Contact</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Toggle navigation menu">☰</button>
+  <!-- NAV -->
+   <nav class="main-nav" role="navigation">
+    <div class="nav-container">
+      <div class="imge-logo">
+        <img src="/assets/images/cat and coffee.jfif" alt="Happy Gato's Baking Logo" />
       </div>
-    </nav>
+      <ul class="nav-links">
+        <li><a href="index.html"><span class="icon home-icon"></span>Home</a></li>
+        <li><a href="#baking-section"><span class="icon video-icon"></span>Videos</a></li>
+        <li><a href="#recipe-section"><span class="icon recipe-icon"></span>Recipes</a></li>
+        <li><a href="#tips-section"><span class="icon tips-icon"></span>Baking Tips</a></li>
+        <li><a href="aboutus.html"><span class="icon about-icon"></span>About Us</a></li>
+        <li><a href="contact.html"><span class="icon contact-icon"></span>Contact</a></li>
+
+      <!-- Theme Selector -->
+      <li class="theme-switcher">
+        <label for="themeSelect" class="visually-hidden">Theme:</label>
+        <select id="themeSelect">
+          <option value="">Default</option>
+          <option value="theme-protanopia">Protanopia</option>
+          <option value="theme-deuteranopia">Deuteranopia</option>
+          <option value="theme-tritanopia">Tritanopia</option>
+          <option value="theme-achromatopsia">Achromatopsia</option>
+          <option value="theme-high-contrast">High Contrast</option>
+        </select>
+      </li>
+
+        
+      </ul>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </nav>
   </header>
 
   <!-- Hero Header -->
@@ -132,5 +148,21 @@
     toggle.addEventListener('click', () => links.classList.toggle('show'));
   </script>
 
+<script>
+  const themeSelect = document.getElementById("themeSelect");
+
+  // Load saved theme from localStorage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    document.documentElement.className = savedTheme;
+    themeSelect.value = savedTheme;
+  }
+
+  // Change theme when dropdown changes
+  themeSelect.addEventListener("change", (e) => {
+    document.documentElement.className = e.target.value;
+    localStorage.setItem("theme", e.target.value);
+  });
+</script>
 </body>
 </html>
