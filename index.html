@@ -4,12 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home | Happy Gato's Baking</title>
-  <link rel="stylesheet" href="/assets/css/index.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="Happy Gato Baking Community">
+<meta property="og:description" content="Simple, tested baking recipes to make at home.">
+<meta property="og:image" content="https://yourdomain.com/images/preview.jpg">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:type" content="website">
 </head>
 <body>
 
+
   <!-- NAV -->
-   <nav class="main-nav">
+   <nav class="main-nav" role="navigation">
     <div class="nav-container">
       <div class="imge-logo">
         <img src="/assets/images/cat and coffee.jfif" alt="Happy Gato's Baking Logo" />
@@ -21,22 +29,25 @@
         <li><a href="#tips-section"><span class="icon tips-icon"></span>Baking Tips</a></li>
         <li><a href="aboutus.html"><span class="icon about-icon"></span>About Us</a></li>
         <li><a href="contact.html"><span class="icon contact-icon"></span>Contact</a></li>
+
+
+        
       </ul>
-      <button class="nav-toggle">☰</button>
+      <button class="nav-toggle" aria-label="Toggle navigation menu">☰</button>
     </div>
   </nav>
+
 
   <header>
     <div class="header-content">
       <h1>Happy Gato's Baking</h1>
       <figure>
-        <img src="/assets/images/jumpy.gif" alt="Happy Cat :3" title="Happy Flan" />
+        <img src="/assets/media/jumpy.gif" alt="Happy Cat :3" title="Happy Flan" />
       </figure>
     </div>
   </header>
 
   <main>
-
     <section class="intro">
       <h2>Trusted Baking Recipes from a Self-Taught Baker</h2>
       <div class="recipes">
@@ -118,7 +129,7 @@
           <img src="/assets/images/catpfp.jfif" alt="Gato" />
         </div>
         <div class="bio-box">
-          <h3 class="about">ABOUT THE AUTHOR</h3>
+          <p class="about">ABOUT THE AUTHOR</p>
           <h1>Gato</h1>
           <p class="description">
             Gato is a baker, food photographer, and New York Times best-selling author. Her kitchen-tested recipes and step-by-step tutorials have given millions of readers the knowledge and confidence to bake from scratch. Gato's work has been featured on TODAY, Good Morning America, Taste of Home, People, and more.
@@ -164,6 +175,59 @@
         <div class="btn-container">
             <a href="#" class="view-btn">VIEW ALL VIDEOS →</a>
         </div>
+    </section>
+
+    <section class="table-items">
+        <table class="popular-table">
+          <thead>
+          <tr>
+            <th colspan="3">Most Popular Items</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- Column 1: Unordered list -->
+            <td>
+              <h3>Breads</h3>
+              <ul>
+                <li>Banana Bread</li>
+                <li>Whole Wheat Bread</li>
+                <li>Sourdough</li>
+              </ul>
+            </td>
+
+            <!-- Column 2: Ordered list -->
+            <td>
+              <h3>Cakes</h3>
+              <ol>
+                <li>Chocolate Cake</li>
+                <li>Red Velvet Cake</li>
+                <li>Carrot Cake</li>
+              </ol>
+            </td>
+
+            <!-- Column 3: Description list -->
+            <td>
+              <h3>Cookies</h3>
+              <dl>
+                <dt>Chocolate Chip</dt>
+                <dd>Soft and chewy with dark chocolate chunks.</dd>
+                <dt>Oatmeal</dt>
+                <dd>Classic oats with a hint of cinnamon.</dd>
+              </dl>
+            </td>
+          </tr>
+
+           <!-- New row spanning all columns -->
+          <tr>
+            <td colspan="3" class="table-note">
+              <p><em>Tip: All recipes above are color-blind friendly and accessible. 
+              <a href="files/full-recipe-list.pdf" download>Download the full list</a></em></p> 
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
     </section>
 
     <section id="recipe-section">
@@ -219,7 +283,7 @@
       </div>
 
       <div class="cta-container">
-        <a href="#" class="cta-btn">VIEW MORE RECIPES →</a>
+        <a href="https://sallysbakingaddiction.com/category/savory-recipes/dinner/" class="cta-btn">VIEW MORE RECIPES →</a>
       </div>
   </section>
 
@@ -289,7 +353,7 @@
 
             <label class="checkbox-container">
               <input type="checkbox" required />
-              <span>I agree to receive emails from Gato's Baking Recipes!</span>
+              <span>I agree to receive emails from <a href="mailto:hello@gatobaking.com"> hello@gatobaking.com</a></span>
             </label>
 
             <button type="submit">YES, SIGN ME UP</button>
@@ -305,15 +369,17 @@
 
   </main>
 
-
   <footer class="site-footer">
-    <p>&copy; Sally's Baking Addiction. Site created for academic purposes.</p>
-    <!-- <nav class="footer-nav">
-      <a href="index.html">Home</a> |
-      <a href="aboutus.html">About Us</a> |
-      <a href="contact.html">Contact</a>
-    </nav> -->
+    <p>&copy; 2025 Happy Gato. Site created for academic purposes.</p>
   </footer>
+
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => links.classList.toggle('show'));
+  </script>
+
 </body>
 </html>
 -

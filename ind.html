@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Gato Demo | Theme Switcher</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    /* Dropdown container */
+    .theme-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown button */
+    .theme-btn {
+      background: none;
+      border: none;
+      color: var(--link-color);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .theme-btn:hover {
+      color: var(--link-hover);
+    }
+
+    /* Dropdown menu */
+    .theme-menu {
+      display: none;
+      position: absolute;
+      background-color: var(--card-bg);
+      min-width: 140px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      z-index: 1000;
+    }
+
+    .theme-menu button {
+      width: 100%;
+      padding: 10px;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      color: var(--text-color);
+    }
+
+    .theme-menu button:hover {
+      background-color: var(--hover-bg);
+      color: var(--link-hover);
+    }
+
+    /* Show dropdown on open */
+    .theme-dropdown.open .theme-menu {
+      display: block;
+    }
+  </style>
+</head>
+<body class="theme-default">
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="imge-logo">
+        <img src="https://via.placeholder.com/80" alt="Happy Gato Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Tips</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+
+        <!-- Theme Dropdown -->
+        <li class="theme-dropdown">
+          <button class="theme-btn" onclick="toggleDropdown()">Theme ▾</button>
+          <div class="theme-menu">
+            <button onclick="setTheme('default')">Default</button>
+            <button onclick="setTheme('protanopia')">Protanopia</button>
+            <button onclick="setTheme('deuteranopia')">Deuteranopia</button>
+            <button onclick="setTheme('tritanopia')">Tritanopia</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header-content">
+    <img src="https://via.placeholder.com/250x120/ffc0cb/000000?text=Happy+Gato" alt="Happy Gato Banner">
+    <h1>Welcome to Happy Gato</h1>
+  </header>
+
+  <!-- Category Section -->
+  <section class="category-section">
+    <div class="category-grid">
+      <div class="category-card">
+        <div class="icon-circle"><img src="https://via.placeholder.com/60" alt=""></div>
+        <p>Cakes</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle"><img src="https://via.placeholder.com/60" alt=""></div>
+        <p>Cookies</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle"><img src="https://via.placeholder.com/60" alt=""></div>
+        <p>Breads</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle"><img src="https://via.placeholder.com/60" alt=""></div>
+        <p>Pastries</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle"><img src="https://via.placeholder.com/60" alt=""></div>
+        <p>Tarts</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle"><img src="https://via.placeholder.com/60" alt=""></div>
+        <p>Muffins</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle"><img src="https://via.placeholder.com/60" alt=""></div>
+        <p>Pies</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Happy Gato. Academic Demo.</p>
+  </footer>
+
+  <script>
+    function setTheme(theme) {
+      document.body.className = "theme-" + theme;
+      closeDropdown();
+    }
+
+    function toggleDropdown() {
+      document.querySelector('.theme-dropdown').classList.toggle('open');
+    }
+
+    function closeDropdown() {
+      document.querySelector('.theme-dropdown').classList.remove('open');
+    }
+
+    // Close dropdown if clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.theme-dropdown')) {
+        closeDropdown();
+      }
+    });
+  </script>
+</body>
+</html>

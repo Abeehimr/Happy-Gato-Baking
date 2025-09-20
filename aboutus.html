@@ -1,78 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About | Happy Gato's Baking</title>
-  <link rel="stylesheet" href="/assets/css/about.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Happy Gato Baking</title>
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.jpeg">
+  <!-- Open Graph meta tags -->
+<meta property="og:title" content="Happy Gato Baking Community">
+<meta property="og:description" content="Simple, tested baking recipes to make at home.">
+<meta property="og:image" content="https://yourdomain.com/images/preview.jpg">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:type" content="website">
 
+</head>
 <body>
 
-  <!-- NAV -->
-  <nav class="main-nav">
-    <div class="nav-container">
-      <div class="imge-logo">
-        <img src="/assets/images/cat and coffee.jfif" alt="Happy Gato's Baking Logo" />
+  <!-- Navigation -->
+  <header class="site-header"></header>
+    <!-- NAV -->
+    <nav class="main-nav" role="navigation">
+      <div class="nav-container">
+        <div class="imge-logo">
+          <img src="/assets/images/cat and coffee.jfif" alt="Happy Gato's Baking Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html"><span class="icon home-icon"></span>Home</a></li>
+          <li><a href="index.html#baking-section"><span class="icon video-icon"></span>Videos</a></li>
+          <li><a href="index.html#recipe-section"><span class="icon recipe-icon"></span>Recipes</a></li>
+          <li><a href="index.html#tips-section"><span class="icon tips-icon"></span>Baking Tips</a></li>
+          <li><a href="aboutus.html"><span class="icon about-icon"></span>About Us</a></li>
+          <li><a href="contact.html"><span class="icon contact-icon"></span>Contact</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">☰</button>
       </div>
-      <ul class="nav-links">
-        <li><a href="index.html"><span class="icon home-icon"></span>Home</a></li>
-        <li><div class="nav-item"><span class="icon recipe-icon"></span>Recipes</div></li>
-      <li><div class="nav-item"><span class="icon tips-icon"></span>Baking Tips</div></li>
-      <li><div class="nav-item"><span class="icon video-icon"></span>Videos</div></li>
-        <li><a href="aboutus.html"><span class="icon about-icon"></span>About Us</a></li>
-        <li><a href="contact.html"><span class="icon contact-icon"></span>Contact</a></li>
-      </ul>
-      <button class="nav-toggle">☰</button>
-    </div>
-  </nav>
-  
-  <header class="site-header">
-    <div class="header-intro">
-      <img src="/assets/images/" alt="heart" class="icon-heart">
-      <span class="welcome-text">Hearty Gato Welcomes you heartily</span>
-      <img src="" alt="heart" class="icon-heart">
+    </nav>
+  </header>
+
+  <!-- Hero Header -->
+  <header class="about-hero">
+    <div class="about-hero-content">
+      <h1>Our Story</h1>
+      <p>Happy Baking started as a small kitchen blog where we shared our favourite family recipes with friends. Over time it grew into a vibrant online space filled with trusted, easy-to-follow baking ideas. We’ve built a community of bakers who enjoy trying new flavours and sharing their own creations. This is the story of how a simple passion for baking turned into a place where inspiration rises every day.</p>
     </div>
   </header>
 
-  <main class="about-content">
-    <section class="mission">
-      <div class="mission-image">
-        <img src="" alt="Swiss Roll">
+  <!-- Author Section -->
+  <section class="about-section">
+    <div class="about-image-container">
+      <img src="/assets/images/catpfp.jfif" alt="Gato Founder" />
+    </div>
+    <div class="about-bio-box">
+      <p class="about-heading">About Me</p>
+      <h1>Hi, I'm Gato</h1>
+      <p class="about-description">
+        I'm the creator behind Happy Gato Baking. I started this website to share my love of simple,
+        tested-and-true recipes with bakers of all skill levels. All recipes are developed with
+        clear text cues, contrasting colours and symbols so that <span class="highlight">everyone can bake</span> with confidence.
+      </p>
+      <div class="about-button-ctn">
+        <a href="mailto:hello@happybaking.com" class="about-button">Email Me</a>
       </div>
-      <div class="mission-text">
-        <p><span class="brand-name">Happy Gato</span> is a space where dedicated bakers are passionate about creating fresh, delicious and mouthwatering treats that bring joy to every table and life. From warm bread and flaky pastries to decadent cakes and cookies, our mission is to share the love of baking with everyone. We believe in using quality ingredients, time-honoured recipes, and a touch of creativity to make every bite special.</p>
+    </div>
+  </section>
+
+  <!-- Mission Article -->
+  <article class="mission-article">
+    <section class="mission-section">
+      <div class="mission-inner">
+        <div class="mission-header">
+          <h2>Our Mission</h2>
+        </div>
+
+        <!-- block-level div -->
+        <div class="mission-note">
+          Our mission is to make baking easy, inclusive, and accessible for everyone by sharing reliable recipes and tips
+        </div>
+
+        <div class="mission-grid">
+          <div class="mission-card">
+            <img src="images/icon1.jpg" alt="Tested Recipes">
+            <h3>Tested Recipes</h3>
+            <p class="mission-comments">
+              Every recipe is triple-tested so you can trust the results.
+            </p>
+          </div>
+          <div class="mission-card">
+            <img src="images/icon2.jpg" alt="Inclusive Design">
+            <h3>Inclusive Design</h3>
+            <p class="mission-comments">
+              Contrast, patterns and symbols for easier baking cues.
+            </p>
+          </div>
+          <div class="mission-card">
+            <img src="images/icon3.jpg" alt="Seasonal Favorites">
+            <h3>Seasonal Favorites</h3>
+            <p class="mission-comments">
+              Curated lists like our “15 Best Fall Baking Recipes.”
+            </p>
+          </div>
+        </div>
+
+        <!-- Collapsible content -->
+        <details class="mission-details">
+          <summary>Read more about our testing process</summary>
+          <p>
+            Each recipe is tested at least three times with different ovens,
+            ingredients and bakers to ensure reliability and accessibility.
+          </p>
+        </details>
+
+        <!-- Styled button with hover animation -->
+        <div class="mission-btn-ctn" id="override-demo">
+          <a href="recipes.html" class="mission-btn mission-btn-alt">View Recipes</a>
+        </div>
+
       </div>
     </section>
+  </article>
 
-    <section class="story">
-      <div class="story-text">
-        <h2>Our Story</h2>
-        <p>At Happy Gato, baking isn't just what we do — it's who we are. We began as a small kitchen project, making fresh bread and treats for friends and family. What started as a simple hobby soon turned into a heartfelt mission: to bring people together through the joy of homemade baking. Every loaf, pastry, and cake we make carries our promise of quality, care, and a sprinkle of creativity.</p>
-        <p>We believe that food made with love tastes better, and that a shared bite can create lasting memories. From our kitchen to your table, thank you for letting us be part of your sweetest moments.</p>
-      </div>
-      <div class="story-image">
-        <img src="" alt="Baking image">
-      </div>
-    </section>
-
-    <section class="gallery">
-      <div class="gallery-image">
-        <img src="" alt="Strawberries image">
-      </div>
-      <div class="gallery-image">
-        <img src="" alt="Cakes image">
-      </div>
-    </section>
-  </main>
-
+  <!-- Footer -->
   <footer class="site-footer">
-    <p>&copy; Sally's Baking Addiction. Site created for academic purposes.</p>
-    <nav class="footer-nav">
-      <a href="index.html">Home</a> |
-      <a href="aboutus.html">About Us</a> |
-      <a href="contact.html">Contact</a>
-    </nav>
+    <p>&copy; 2025 Happy Gato. Site created for academic purposes.</p>
   </footer>
+
+
+  <script>
+    // mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => links.classList.toggle('show'));
+  </script>
+
 </body>
 </html>

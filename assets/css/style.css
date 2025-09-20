@@ -1,0 +1,238 @@
+/* ========= BASE VARIABLES ========= */
+:root {
+  --main-bg: #fef6f4;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --border-color: #e8d7c9;
+  --tag-color: #7a5c36;
+  --comment-color: #c36b68;
+  --heading-color: #6b3e6b;
+  --text-color: #333;
+  --hover-bg: rgba(160, 95, 160, 0.1);
+}
+
+
+/* ===================
+   Theme Colors
+   =================== */
+
+/* Default (Light Pink) */
+.theme-default {
+  --main-bg: #fef6f4;
+  --text-color: #333333;
+  --heading-color: #6b3e6b;
+  --link-color: #5c3a5c;
+  --link-hover: #a05fa0;
+  --card-bg: #ffffff;
+  --accent: #f3e2cc;
+  --comment-color: #c36b68;
+}
+
+/* Protanopia-friendly (Solarized-inspired) */
+.theme-protanopia {
+  --main-bg: #fdf6e3;
+  --text-color: #002b36;
+  --heading-color: #073642;
+  --link-color: #268bd2;
+  --link-hover: #2aa198;
+  --card-bg: #ffffff;
+  --accent: #eee8d5;
+  --comment-color: #586e75;
+}
+
+/* Deuteranopia-friendly (Neutral w/ adjusted orange) */
+.theme-deuteranopia {
+  --main-bg: #f0f0f0;
+  --text-color: #222222;
+  --heading-color: #222222;
+  --link-color: #cc6600;      /* ✅ Darker orange for contrast */
+  --link-hover: #994d00;
+  --card-bg: #ffffff;
+  --accent: #dddddd;
+  --comment-color: #005f87;
+}
+
+/* Tritanopia-friendly (Adjusted green & pink) */
+.theme-tritanopia {
+  --main-bg: #f9f9ff;
+  --text-color: #222222;
+  --heading-color: #222222;
+  --link-color: #006644;      /* ✅ Darker green */
+  --link-hover: #004d33;
+  --card-bg: #ffffff;
+  --accent: #ddddff;
+  --comment-color: #c01c40;   /* ✅ Darker pink */
+}
+
+
+/* ========= RESET ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--main-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ========= THEME SWITCHER ========= */
+.theme-switcher {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #fff;
+  border-bottom: 1px solid var(--border-color);
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+
+.theme-switcher button {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--nav-bg);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.theme-switcher button:hover {
+  background: var(--hover-bg);
+}
+
+/* ========= NAVIGATION ========= */
+.main-nav {
+  background-color: var(--nav-bg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  position: sticky;
+  top: 40px;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--heading-color);
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #a05fa0;
+  background: var(--hover-bg);
+}
+
+/* style the Theme button like other nav-links */
+.nav-links .theme-btn {
+  background: none;
+  border: none;
+  color: var(--heading-color);
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-links .theme-btn:hover {
+  color: #a05fa0;
+  background: var(--hover-bg);
+}
+
+
+/* ========= HEADER ========= */
+.header-content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.header-content img {
+  width: 250px;
+  opacity: 0.85;
+}
+
+h1 {
+  margin-top: 15px;
+  font-size: 2.5rem;
+  color: var(--heading-color);
+}
+
+/* ========= CATEGORY GRID ========= */
+.category-section {
+  padding: 2rem 1rem;
+  background: var(--main-bg);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-card {
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+  padding: .5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.12);
+}
+
+.icon-circle {
+  background: #e8e6e6;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.category-card p {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* ========= FOOTER ========= */
+.site-footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--nav-bg);
+  margin-top: 40px;
+  border-top: 1px solid var(--border-color);
+}

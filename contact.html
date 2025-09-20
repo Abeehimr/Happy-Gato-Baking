@@ -4,59 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Happy Gato</title>
-  <link rel="stylesheet" href="/assets/css/contact.css">
+  <!-- site CSS -->
+  <link rel="stylesheet" href="assets/css/index.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-  <header class="site-header"></header>
-    <nav class="main-nav">
-      <div class="nav-container">
-        <div class="imge-logo">
-          <img src="/assets/images/cat and coffee.jfif" alt="Happy Gato's Baking Logo" />
-        </div>
-        <ul class="nav-links">
-          <li><a href="index.html"><span class="icon home-icon"></span>Home</a></li>
-          <li><div class="nav-item"><span class="icon recipe-icon"></span>Recipes</div></li>
-        <li><div class="nav-item"><span class="icon tips-icon"></span>Baking Tips</div></li>
-        <li><div class="nav-item"><span class="icon video-icon"></span>Videos</div></li>
-          <li><a href="aboutus.html"><span class="icon about-icon"></span>About Us</a></li>
-          <li><a href="contact.html"><span class="icon contact-icon"></span>Contact</a></li>
-        </ul>
-        <button class="nav-toggle">☰</button>
-      </div>
-    </nav>
-  </header>
 
-  <!-- Background Slideshow -->
-   <div id="slideshow" class="slideshow" aria-hidden="true"></div>
+<body class="contact-page">
+
+  <!-- NAV -->
+   <nav class="main-nav" role="navigation">
+    <div class="nav-container">
+      <div class="imge-logo">
+        <img src="/assets/images/cat and coffee.jfif" alt="Happy Gato's Baking Logo" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><span class="icon home-icon"></span>Home</a></li>
+        <li><a href="#baking-section"><span class="icon video-icon"></span>Videos</a></li>
+        <li><a href="#recipe-section"><span class="icon recipe-icon"></span>Recipes</a></li>
+        <li><a href="#tips-section"><span class="icon tips-icon"></span>Baking Tips</a></li>
+        <li><a href="aboutus.html"><span class="icon about-icon"></span>About Us</a></li>
+        <li><a href="contact.html"><span class="icon contact-icon"></span>Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </nav>
 
   <!-- Contact Form -->
-  <main>
-    <div class="contact-container">
-      <h2>Contact Us</h2>
-      <p class="subtitle">We'd love to hear from you. Fill out the form and we'll get back to you soon!</p>
-      
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <main class="join-wrapper">
+    <h1 class="join-title">Join Our Baking Community</h1>
 
-        <div class="form-buttons">
-          <button type="submit" class="btn-submit">Submit</button>
-          <button type="reset" class="btn-reset">Reset</button>
-        </div>
-      </form>
-    </div>
+    <!-- NEW: Button to open dialog -->
+    <button id="openDialogBtn" class="btn btn-primary mb-3">Open Info</button>
+
+    <!-- NEW: Native dialog -->
+    <dialog id="nativeDialog" aria-labelledby="dlgTitle" aria-describedby="dlgDesc">
+      <div style="padding:16px; max-width:560px;">
+        <h2 id="dlgTitle" style="margin-top:0;">Quick Info</h2>
+        <p id="dlgDesc"> Dialoge Box :3</p>
+        <p style="margin-top: 12px;">
+          <button id="dialogClose" class="btn btn-outline-secondary">Close</button>
+          <button id="dialogAction" class="btn btn-success ms-2">Take action</button>
+        </p>
+      </div>
+    </dialog>
+
+    <form action="#" method="post" class="join-form">
+
+      <!-- Name -->
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
+
+      <!-- Email -->
+      <label for="join-email">Email Address:</label>
+      <input type="email" id="join-email" name="join-email" placeholder="Enter your email" required>
+
+      <!-- URL -->
+      <label for="join-website">Your Blog / Website URL:</label>
+      <input type="url" id="join-website" name="join-website" placeholder="https://example.com">
+
+      <!-- Date -->
+      <label for="join-dob">Date of Birth:</label>
+      <input type="date" id="join-dob" name="join-dob" required>
+
+      <!-- Favourite Colour -->
+      <label for="join-color">Pick Your Favourite Colour:</label>
+      <input type="color" id="join-color" name="join-color" value="#a05fa0">
+
+      <!-- Range -->
+      <label for="join-experience">Baking Experience (0-10):</label>
+      <input type="range" id="join-experience" name="join-experience" min="0" max="10" step="1">
+
+      <!-- Checkbox -->
+      <div class="join-checkbox">
+        <input type="checkbox" id="join-subscribe" name="join-subscribe" required>
+        <label for="join-subscribe">I agree to receive recipes and tips.</label>
+      </div>
+
+      <!-- Buttons -->
+      <div class="join-buttons">
+        <button type="submit" class="join-btn-submit">Submit</button>
+        <button type="reset" class="join-btn-reset">Reset</button>
+      </div>
+    </form>
+
+    <!-- Download link -->
+    <p class="join-download">
+      <a href="assets/media/jumpy.gif" download>📄 Download our brochure</a>
+    </p>
   </main>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p>&copy; Sally's Baking Addiction. Site created for academic purposes.</p>
-    <nav class="footer-nav">
-      <a href="index.html">Home</a> |
-      <a href="aboutus.html">About Us</a> |
-      <a href="contact.html">Contact</a>
-    </nav>
+    <p>&copy; 2025 Happy Gato. Site created for academic purposes.</p>
   </footer>
+
+
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => links.classList.toggle('show'));
+    </script>
 
   <!-- MODAL POPUP -->
   <div id="confirmationModal" class="modal">
@@ -67,8 +115,56 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT -->
-  <script src="script.js"></script>
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Your JS -->
+  <script>
+    // example toggle for nav
+    const cToggle = document.querySelector('.contact-toggle');
+    const cLinks = document.querySelector('.contact-links');
+    if (cToggle && cLinks) {
+      cToggle.addEventListener('click', () => cLinks.classList.toggle('show'));
+    }
+
+    // Dialog JS
+    (function(){
+      const openBtn = document.getElementById('openDialogBtn');
+      const dialog = document.getElementById('nativeDialog');
+      const closeBtn = document.getElementById('dialogClose');
+      const actionBtn = document.getElementById('dialogAction');
+      let lastFocused = null;
+
+      function showDialog() {
+        lastFocused = document.activeElement;
+        if (typeof dialog.showModal === 'function') {
+          dialog.showModal();
+          closeBtn.focus();
+        } else {
+          alert('This browser does not support <dialog>.');
+        }
+      }
+
+      function closeDialog() {
+        if (typeof dialog.close === 'function') {
+          dialog.close();
+          if (lastFocused) lastFocused.focus();
+        }
+      }
+
+      openBtn.addEventListener('click', showDialog);
+      closeBtn.addEventListener('click', closeDialog);
+
+      actionBtn.addEventListener('click', function(){
+        window.location.href = 'recipes.html';
+      });
+
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && dialog.open) {
+          closeDialog();
+        }
+      });
+    })();
   </script>
 </body>
-</html
+</html>
