@@ -742,7 +742,7 @@ h1 {
 }
 .popular-table dl dt {
   font-weight: 600;
-  color: var(--accent-2, #ff9f1c);
+  color: var(--accent-2, var(--nav-link-hover));
   margin-top: .4rem;
 }
 .popular-table dl dd {
